@@ -31,7 +31,7 @@ def export_data(file_name):
                 entry["Номер телефона"] + "n"
             )
 
-def add_entry():
+def add_data():
     last_name = input("Введите фамилию: ")
     first_name = input("Введите имя: ")
     middle_name = input("Введите отчество: ")
@@ -43,7 +43,7 @@ def add_entry():
     }
     print("Запись успешно добавлена.")
 
-def search_entry(term):
+def search_data(term):
     results = []
     for last_name, entry in phone_book.items():
         if term.lower() in last_name.lower() or term.lower() in entry["Имя"].lower():
@@ -52,7 +52,7 @@ def search_entry(term):
 
 def modify_entry():
     term = input("Введите фамилию или имя записи, которую хотите изменить: ")
-    results = search_entry(term)
+    results = search_data(term)
     if len(results) == 0:
         print("Запись не найдена.")
     elif len(results) == 1:
@@ -79,7 +79,7 @@ def modify_entry():
 
 def delete_entry():
     term = input("Введите фамилию или имя записи, которую хотите удалить: ")
-    results = search_entry(term)
+    results = search_data(term)
     if len(results) == 0:
         print("Запись не найдена.")
     elif len(results) == 1:
@@ -117,18 +117,17 @@ def print_phone_book():
         print("Телефонный справочник пуст.")
 
 phone_book = {}
-
 while True:
     print("Меню:")
-    print("1. Импортировать данные из файла")
-    print("2. Экспортировать данные в файл")
-    print("3. Добавить запись")
-    print("4. Поиск по фамилии или имени")
-    print("5. Изменить запись")
-    print("6. Удалить запись")
-    print("7. Вывести все записи")
-    print("8. Выйти")
-    choice = input("Выберите пункт меню: ")
+    print("1: Импортировать данные из файла")
+    print("2: Экспортировать данные в файл")
+    print("3: Добавить запись")
+    print("4: Поиск по фамилии или имени")
+    print("5: Изменить запись")
+    print("6: Удалить запись")
+    print("7: Вывести все записи")
+    print("8: Выйти")
+    choice = input("Введите номер пункта меню: ")
 
     if choice == "1":
         file_name = input("Введите имя файла: ")
@@ -138,10 +137,10 @@ while True:
         file_name = input("Введите имя файла: ")
         export_data(file_name)
     elif choice == "3":
-        add_entry()
+        add_data()
     elif choice == "4":
         term = input("Введите фамилию или имя для поиска: ")
-        results = search_entry(term)
+        results = search_data(term)
         if len(results) > 0:
             print("Результаты поиска:")
             for i, (last_name, entry) in enumerate(results):
