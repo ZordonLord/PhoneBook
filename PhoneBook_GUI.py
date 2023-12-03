@@ -10,10 +10,6 @@
 
 from tkinter import *
 
-root = Tk()
-root.title('Телефонная книга')
-root.geometry('600x600')
-
 def import_data(file_name):
     try:
         with open(file_name, "r") as file:
@@ -124,6 +120,11 @@ def print_phone_book():
     else:
         print("Телефонный справочник пуст.")
 
+
+root = Tk()
+root.title('Телефонная книга')
+root.geometry('600x600')
+
 phone_book = {}
 
 btn1 = Button(root,
@@ -131,7 +132,8 @@ btn1 = Button(root,
              command= 'import_data',
              font = 'Arial 20',
              bg = 'lime',
-             activebackground = 'blue'
+             activebackground = 'blue',
+             width='30'
              )
 
 btn2 = Button(root,
@@ -139,15 +141,17 @@ btn2 = Button(root,
              command= 'export_data',
              font = 'Arial 20',
              bg = 'lime',
-             activebackground = 'blue'
+             activebackground = 'blue',
+             width='30'
              )
 
 btn3 = Button(root,
              text = '3. Добавить запись',
-             command = 'add_data',
+             command = 'add_person',
              font = 'Arial 20',
              bg = 'lime',
-             activebackground = 'blue'
+             activebackground = 'blue',
+             width='30'
              )
 
 btn4 = Button(root,
@@ -155,7 +159,8 @@ btn4 = Button(root,
              command= '',
              font = 'Arial 20',
              bg = 'lime',
-             activebackground = 'blue'
+             activebackground = 'blue',
+             width='30'
              )
 
 btn5 = Button(root,
@@ -163,7 +168,8 @@ btn5 = Button(root,
              command= '',
              font = 'Arial 20',
              bg = 'lime',
-             activebackground = 'blue'
+             activebackground = 'blue',
+             width='30'
              )
 
 btn6 = Button(root,
@@ -171,7 +177,8 @@ btn6 = Button(root,
              command= '',
              font = 'Arial 20',
              bg = 'lime',
-             activebackground = 'blue'
+             activebackground = 'blue',
+             width='30'
              )
 
 btn7 = Button(root,
@@ -179,7 +186,8 @@ btn7 = Button(root,
              command= 'print_phone_book',
              font = 'Arial 20',
              bg = 'lime',
-             activebackground = 'blue'
+             activebackground = 'blue',
+             width='30'
              )
 
 btn8 = Button(root,
@@ -187,7 +195,8 @@ btn8 = Button(root,
              command= 'exit',
              font = 'Arial 20',
              bg = 'lime',
-             activebackground = 'blue'
+             activebackground = 'blue',
+             width='30'
              )
 
 label_text = Label(root, text ='Выберите пункт меню: ', font = "Arial 20")
